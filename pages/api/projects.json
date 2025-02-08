@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Cscs Custodian Portal",
+    "image": "https://imgur.com/Be35199.png",
+    "description": "A web application for custodians to manage their stocks, accounts, and portfolios.",
+    "tags": [".NET", "C#", "JAVASCRIPT", "JQUERY", "TYPESCRIPT", "MSSQLSERVER", "ENTITY FRAMEWORK", "STORED PROCEDURES", "IIS WEB SERVER", "SIGNAL-R"],
+    "demo": "https://custodian.cscs.ng/"
+  },
+  
+  {
+    "id": 2,
+    "name": "Cscs Broker's Portal",
+    "image": "https://imgur.com/PhNKcEU.png",
+    "description": "A web application for brokers to manage their stocks, accounts, and portfolios.",
+    "tags": [".NET", "C#", "JAVASCRIPT", "JQUERY", "TYPESCRIPT", "MSSQLSERVER", "ENTITY FRAMEWORK", "STORED PROCEDURES", "SIGNAL-R"],
+    "demo": "https://broker.cscs.ng/"
+  },
+  {
+    "id": 3,
+    "name": "Ethical Chefs",
+    "image": "https://imgur.com/sU9bCJ6.png",
+    "description": "A project for chefs to recruit employers and sell kitchen-related items on their platform.",
+    "tags": ["NODEJS", "NESTJS", "TYPESCRIPT", "KNEX", "POSTGRESQL", "SWAGGER", "JEST", "NEXTJS"],
+    "demo": "https://ethical-chefs-frontend.vercel.app/"
+  },
+  {
+    "id": 4,
+    "name": "Optimus Bank",
+    "image": "https://imgur.com/h5MnFjA.png",
+    "description": "I worked on a variety of banking projects, including a payday loan system, a credit registry for credit check, Papps to facilitate transfers to other African countries, and two-factor authentication solutions, among others.",
+    "tags": [".NET", "C#", "REACT", "PROCESS-MAKER", "TYPESCRIPT", "MSSQLSERVER"],
+    "demo": "https://www.optimusbank.com/"
+  }
+]
