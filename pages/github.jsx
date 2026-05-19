@@ -1,15 +1,39 @@
-import Image from 'next/image';
-import GitHubCalendar from 'react-github-calendar';
-import RepoCard from '../components/RepoCard';
-import styles from '../styles/GithubPage.module.css';
+import Image from "next/image";
+import GitHubCalendar from "react-github-calendar";
+import RepoCard from "../components/RepoCard";
+import styles from "../styles/GithubPage.module.css";
 
-const GithubPage = ({ repos, user }) => {
+const GITHUB_USERNAME =
+  process.env.NEXT_PUBLIC_GITHUB_USERNAME || "Mercyogbenjuwa";
+
+const fallbackUser = {
+  login: "Mercyogbenjuwa",
+  avatar_url: "https://github.com/Mercyogbenjuwa.png",
+  public_repos: 0,
+  followers: 0,
+};
+
+const getGithubHeaders = () => {
+  const headers = {
+    Accept: "application/vnd.github+json",
+  };
+
+  if (process.env.GITHUB_API_KEY) {
+    headers.Authorization = `Bearer ${process.env.GITHUB_API_KEY}`;
+  }
+
+  return headers;
+};
+
+const GithubPage = ({ repos = [], user = fallbackUser }) => {
+  const githubUser = user || fallbackUser;
+
   const theme = {
-    level0: '#161B22',
-    level1: '#0e4429',
-    level2: '#006d32',
-    level3: '#26a641',
-    level4: '#39d353',
+    level0: "#161B22",
+    level1: "#0e4429",
+    level2: "#006d32",
+    level3: "#26a641",
+    level4: "#39d353",
   };
 
   return (
@@ -17,29 +41,35 @@ const GithubPage = ({ repos, user }) => {
       <div className={styles.user}>
         <div>
           <Image
-            src={user.avatar_url}
+            src={githubUser.avatar_url}
             className={styles.avatar}
-            alt={user.login}
+            alt={githubUser.login}
             width={50}
             height={50}
           />
-          <h3 className={styles.username}>{user.login}</h3>
+          <h3 className={styles.username}>{githubUser.login}</h3>
         </div>
+
         <div>
-          <h3>{user.public_repos} repos</h3>
+          <h3>{githubUser.public_repos} repos</h3>
         </div>
+
         <div>
-          <h3>{user.followers} followers</h3>
+          <h3>{githubUser.followers} followers</h3>
         </div>
       </div>
+
       <div className={styles.container}>
-        {repos.map((repo) => (
-          <RepoCard key={repo.id} repo={repo} />
-        ))}
+        {repos.length > 0 ? (
+          repos.map((repo) => <RepoCard key={repo.id} repo={repo} />)
+        ) : (
+          <p>No repositories available at the moment.</p>
+        )}
       </div>
+
       <div className={styles.contributions}>
         <GitHubCalendar
-          username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
+          username={GITHUB_USERNAME}
           theme={theme}
           hideColorLegend
           hideMonthLabels
@@ -51,51 +81,57 @@ const GithubPage = ({ repos, user }) => {
 
 export async function getStaticProps() {
   try {
-    // Fetch user data
+    const headers = getGithubHeaders();
+
     const userRes = await fetch(
-      `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
-      {
-        headers: {
-          Authorization: `token ${process.env.GITHUB_API_KEY}`,
-        },
-      }
+      `https://api.github.com/users/${GITHUB_USERNAME}`,
+      { headers }
     );
 
-    if (!userRes.ok) {
-      throw new Error(`Failed to fetch user data: ${userRes.status}`);
+    let user = fallbackUser;
+
+    if (userRes.ok) {
+      user = await userRes.json();
+    } else {
+      console.warn(`Failed to fetch GitHub user data: ${userRes.status}`);
     }
 
-    const user = await userRes.json();
-
-    // Fetch repos data
     const repoRes = await fetch(
-      `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
-      {
-        headers: {
-          Authorization: `token ${process.env.GITHUB_API_KEY}`,
-        },
-      }
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100`,
+      { headers }
     );
 
-    if (!repoRes.ok) {
-      throw new Error(`Failed to fetch repos: ${repoRes.status}`);
-    }
+    let repos = [];
 
-    let repos = await repoRes.json();
-    repos = repos
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .slice(0, 8);
+    if (repoRes.ok) {
+      repos = await repoRes.json();
+
+      repos = repos
+        .filter((repo) => !repo.fork)
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, 8);
+    } else {
+      console.warn(`Failed to fetch GitHub repos: ${repoRes.status}`);
+    }
 
     return {
-      props: { title: 'GitHub', repos, user },
-      revalidate: 10,
+      props: {
+        title: "GitHub",
+        repos,
+        user,
+      },
+      revalidate: 3600,
     };
   } catch (error) {
-    console.error(error.message);
+    console.error("GitHub page build fallback:", error.message);
 
     return {
-      props: { title: 'GitHub', repos: [], user: null },
-      revalidate: 10,
+      props: {
+        title: "GitHub",
+        repos: [],
+        user: fallbackUser,
+      },
+      revalidate: 3600,
     };
   }
 }
