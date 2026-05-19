@@ -3,57 +3,40 @@
     "id": 1,
     "name": "Optimus Bank",
     "image": "https://imgur.com/h5MnFjA.png",
-    "description": "I worked on a variety of banking projects, including a payday loan system, a credit registry for credit check, Papps to facilitate transfers to other African countries, and two-factor authentication solutions, among others.",
-    "tags": [".NET", "C#", "REACT", "PROCESS-MAKER", "TYPESCRIPT", "MSSQLSERVER"],
+    "description": "Worked on multiple banking products, including a payday loan system, credit registry, PAPSS transfer integration, two-factor authentication, fraud detection, trade monitoring, and internal banking workflow improvements.",
+    "tags": [".NET", "C#", "REACT", "PROCESS-MAKER", "AZURE", "TYPESCRIPT", "MSSQLSERVER"],
     "demo": "https://www.optimusbank.com/"
   },
   {
     "id": 2,
-    "name": "Fit Juwa",
-    "image": "https://imgur.com/Ibm0kFJ.png",
-    "description": "This is an application that helps with fitness consultations like weight loss, weight gain and weight maintanance.",
-    "tags": [".NODEJS", "TYPESCRIPT", "NESTJS", "MYSQL", "TYPEORM", "NEXT-JS", "JEST"],
-    "demo": "https://www.fitjuwa.com/"
+    "name": "Edge Monitoring",
+    "image": "https://imgur.com/0owKFeL.png",
+    "description": "Led and contributed to a monitoring platform for infrastructure, application performance, logs, database health, alerts, runtime visibility, and operational diagnostics. The platform helps teams detect system issues early and respond faster.",
+    "tags": ["GO", ".NET", "REACT", "TYPESCRIPT", "POSTGRESQL","TIME-SCALEDB", "MSSQLSERVER", "AZURE","DOCKER", "MONITORING", "DEVOPS", "KURBERNETES", "OPEN-TELEMETRY", "PROMETHEUS", "GRAFANA"],
+    "demo": "https://prod-ncg.edge.ncgafrica.com/login"
   },
   {
     "id": 3,
-    "name": "Ethical Chefs",
-    "image": "https://imgur.com/sU9bCJ6.png",
-    "description": "A project for chefs to recruit employers and sell kitchen-related items on their platform.",
-    "tags": ["NODEJS", "NESTJS", "TYPESCRIPT", "KNEX", "POSTGRESQL", "SWAGGER", "JEST", "NEXTJS"],
-    "demo": "https://ethical-chefs-frontend.vercel.app/"
+    "name": "Converge ERP",
+    "image": "https://imgur.com/RcuNmhZ.png",
+    "description": "Led frontend delivery for an ERP platform covering employee management, payroll, performance management, questionnaires, approvals, admin workflows, dashboards, and business process automation.",
+    "tags": ["REACT", "TYPESCRIPT", "TAILWINDCSS", "ERP", "PAYROLL", "SHADCN","ODOO"],
+    "demo": "https://dashboard.convergerp.com/signin"
   },
-  
   {
     "id": 4,
-    "name": "Cscs Custodian Portal",
-    "image": "https://imgur.com/Be35199.png",
-    "description": "A web application for custodians to manage their stocks, accounts, and portfolios.",
-    "tags": [".NET", "C#", "JAVASCRIPT", "JQUERY", "TYPESCRIPT", "MSSQLSERVER", "ENTITY FRAMEWORK", "STORED PROCEDURES", "IIS WEB SERVER", "SIGNAL-R"],
-    "demo": "https://custodian.cscs.ng/"
+    "name": "Kobi",
+    "image": "https://imgur.com/MJaVZ5e.png",
+    "description": "Worked on a court process and project management platform used to manage county-based workflows, users, projects, form builders, approvals, and structured operational processes.",
+    "tags": ["C#","REACT", "TYPESCRIPT",".NET","DIRECTUS", "AWS", "DOCKER"],
+    "demo": "https://staging.kobiii.com/projects"
   },
   {
     "id": 5,
-    "name": "Djs Consulting Blog",
-    "image": "https://imgur.com/fNMwlpH.png",
-    "description": "Explore a dynamic blog platform where users can discover engaging posts, sign up for updates, and stay informed with the latest educational news.",
-    "tags": [".NODEJS", "TYPESCRIPT", "NESTJS", "POSTGRESQL", "PRISMA", "NEXT-JS", "SWAGGER", "JEST"],
-    "demo": "https://digital-tech-blog.vercel.app/login"
-  },
-  {
-    "id": 6,
-    "name": "Split Delivery",
-    "image": "https://imgur.com/MggkEQS.png",
-    "description": "This is an application that facilitates different types of deliveries take place—such as air, land, and bike deliveries, among others.",
-    "tags": [".NODEJS", "TYPESCRIPT", "NESTJS", "MYSQL", "TYPEORM", "NEXT-JS", "SWAGGER", "JEST"],
-    "demo": "https://split-delivery.vercel.app/"
-  },
-  {
-    "id": 7,
-    "name": "Temperature Conversion",
-    "image": "https://imgur.com/GnnFq8X.png",
-    "description": "This is an application that helps with temperature conversion.",
-    "tags": [".NODEJS", "TYPESCRIPT", "NEXTJS", "HTML", "CSS", "JAVASCRIPT"],
-    "demo": "https://www.tofahrenheit.com/"
-  } 
+    "name": "Cscs Custodian Portal",
+    "image": "https://imgur.com/Be35199.png",
+    "description": "Built and improved a custodian portal for managing stocks, accounts, portfolios, trade activities, account operations, and cross-exchange trade execution.",
+    "tags": [".NET", "C#", "GO", "JAVASCRIPT", "JQUERY", "TYPESCRIPT", "MSSQLSERVER", "ENTITY FRAMEWORK", "STORED PROCEDURES", "IIS WEB SERVER", "SIGNAL-R"],
+    "demo": "https://custodian.cscs.ng/"
+  }
 ]

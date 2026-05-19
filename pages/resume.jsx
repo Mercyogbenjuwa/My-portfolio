@@ -1,55 +1,95 @@
 import styles from "../styles/ResumePage.module.css";
 
-const ContactPage = () => {
+const educationHistory = [
+  {
+    degree: "BSc. in Computer Science",
+    school: "Bingham University",
+  },
+];
+
+const professionalExperience = [
+  {
+    company: "Nathan Claire Africa",
+    location: "London, United Kingdom",
+    workType: "Full-time",
+    role: "Product Manager",
+    duration: "JAN. 2026 - PRESENT",
+  },
+  {
+    company: "Nathan Claire Africa",
+    location: "London, United Kingdom",
+    workType: "Contract",
+    role: "Software Engineer",
+    duration: "APR. 2025 - DEC. 2025",
+  },
+  {
+    company: "Central Securities Clearing System",
+    location: "Lagos, Nigeria",
+    workType: "Full-time",
+    role: "Full Stack Product Engineer",
+    duration: "JAN. 2024 - DEC. 2025",
+  },
+  {
+    company: "Optimus Bank",
+    location: "Lagos, Nigeria",
+    workType: "Full-time",
+    role: "Software Engineer",
+    duration: "SEP. 2022 - DEC. 2023",
+  },
+  {
+    company: "Talosmart",
+    location: "Remote",
+    workType: "Full-time",
+    role: "Software Engineer",
+    duration: "SEP. 2021 - SEP. 2022",
+  },
+  {
+    company: "Heirs Life & Heirs General Insurance",
+    location: "Abuja, Nigeria",
+    workType: "Contract",
+    role: "Technical Support",
+    duration: "JAN. 2021 - AUG. 2021",
+  },
+];
+
+const ResumePage = () => {
   return (
     <div className={styles.container}>
       <div className={styles["education-section"]}>
         <h3 className={styles.heading}>Education History</h3>
-        <div className={styles.item}>
-          <h4 className={styles.resumeHead}>Bsc. in Computer Science</h4>
-          <div>Bingham University</div>
-        </div>
+
+        {educationHistory.map((education) => (
+          <div className={styles.item} key={education.degree}>
+            <h4 className={styles.resumeHead}>{education.degree}</h4>
+            <div>{education.school}</div>
+          </div>
+        ))}
       </div>
 
       <div className={styles["work-section"]}>
         <h3 className={styles.heading}>Professional Experience</h3>
-        <div className={styles.item}>
-          <h4 className={styles.resumeHead}>CSCS</h4>
-          <div>Hybrid</div>
-          <div>Fullstack Engineer</div>
-          <div>JAN . 2024 - Present</div>
-        </div>
 
-        <div className={styles.item}>
-          <h4 className={styles.resumeHead}>Optimus Bank</h4>
-          <div>Full-Time</div>
-          <div>Software Engineer</div>
-          <div>SEP. 2022 - DEC 2023</div>
-        </div>
-
-        <div className={styles.item}>
-          <h4 className={styles.resumeHead}>Talosmart</h4>
-          <div>Remote</div>
-          <div>Software Engineer</div>
-          <div>SEP. 2021 - SEP 2022</div>
-        </div>
-
-        <div className={styles.item}>
-          <h4 className={styles.resumeHead}>Heirs Life & Heirs General Insurance</h4>
-          <div>Contract</div>
-          <div>Technical Support</div>
-          <div>JAN. 2021 - AUGUST 2021</div>
-        </div>
+        {professionalExperience.map((experience) => (
+          <div
+            className={styles.item}
+            key={`${experience.company}-${experience.role}-${experience.duration}`}
+          >
+            <h4 className={styles.resumeHead}>{experience.company}</h4>
+            <div>{experience.location}</div>
+            <div>{experience.workType}</div>
+            <div>{experience.role}</div>
+            <div>{experience.duration}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default ContactPage;
+export default ResumePage;
 
-// Fetch static props if needed for SSR or static generation
 export async function getStaticProps() {
-    return {
-      props: { title: 'Resume' },
-    };
+  return {
+    props: { title: "Resume" },
+  };
 }
