@@ -1,98 +1,38 @@
-import { useState } from 'react';
-import ContactCode from '../components/ContactCode';
-import styles from '../styles/ContactPage.module.css';
+import styles from "../styles/ContactPage.module.css";
 
-const ContactPage = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+const services = ["Product strategy & delivery", "Web and mobile applications", "Backend systems & APIs", "ERP and workflow automation", "Cloud, DevOps & monitoring", "Technical product consulting"];
 
-  const submitForm = async (e) => {
-    e.preventDefault();
-    console.log(process.env.NEXT_PUBLIC_API_URL);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
-      method: 'POST',
-      body: JSON.stringify({ name, email, subject, message }),
-    });
-    console.log(res);
-    if (res.ok) {
-      alert('Your response has been received!');
-      setName('');
-      setEmail('');
-      setSubject('');
-      setMessage('');
-    } else {
-      alert('There was an error. Please try again in a while.');
-    }
-  };
-
+export default function ContactPage() {
   return (
-    <div className={styles.container}>
-      <div>
-        <h3 className={styles.heading}>Reach Out Via Socials</h3>
-        <ContactCode />
-      </div>
-      <div>
-        <h3 className={styles.heading}>Or Fill Out This Form</h3>
-        <form className={styles.form} onSubmit={submitForm}>
-          <div className={styles.flex}>
-            <div>
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-          </div>
-          <div>
-            <label htmlFor="name">Subject</label>
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              value={subject}
-              onChange={(e) => setSubject(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="message">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              rows="5"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            ></textarea>
-          </div>
-          <button type="submit">Submit</button>
+    <div className={styles.page}>
+      <section className={styles.intro}>
+        <p className="eyebrow">Start a conversation</p>
+        <h1>Have a product to build or a difficult system to improve?</h1>
+        <p>I help teams turn business needs into dependable digital products—from early product thinking through engineering and launch.</p>
+        <div className={styles.direct}>
+          <span>Prefer email?</span>
+          <a href="mailto:ogbenjuwamercyonyoibo@gmail.com">ogbenjuwamercyonyoibo@gmail.com ↗</a>
+        </div>
+      </section>
+
+      <section className={styles.card}>
+        <div className={styles.cardHead}><span>Available for select projects</span><b aria-hidden="true" /></div>
+        <h2>Tell me what you’re working on.</h2>
+        <p>Share your goal, timeline and where you need support. This opens your email app with everything ready to send—no broken form or lost message.</p>
+        <form action="mailto:ogbenjuwamercyonyoibo@gmail.com" method="get" encType="text/plain" className={styles.form}>
+          <div className={styles.row}><label><span>Your name</span><input name="name" type="text" placeholder="Jane Smith" required /></label><label><span>Email address</span><input name="email" type="email" placeholder="jane@company.com" required /></label></div>
+          <label><span>What do you need help with?</span><select name="subject" defaultValue=""><option value="" disabled>Select a service</option>{services.map((service)=><option value={service} key={service}>{service}</option>)}</select></label>
+          <label><span>Project details</span><textarea name="body" rows="6" placeholder="A short description of the product, the challenge and your ideal timeline…" required /></label>
+          <button type="submit">Send project enquiry <span aria-hidden="true">↗</span></button>
         </form>
-      </div>
+      </section>
+
+      <section className={styles.services}>
+        <p className="eyebrow">Ways I can help</p>
+        <div>{services.map((service,index)=><span key={service}><b>0{index+1}</b>{service}</span>)}</div>
+      </section>
     </div>
   );
-};
-
-export async function getStaticProps() {
-  return {
-    props: { title: 'Contact' },
-  };
 }
 
-export default ContactPage;
+export async function getStaticProps(){return{props:{title:"Contact"}}}

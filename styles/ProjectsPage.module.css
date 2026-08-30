@@ -1,6 +1,7 @@
 .container {
-  margin: 3rem 0 0;
+  margin: 2rem 0 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
 }
+.services{display:grid;grid-template-columns:.65fr 1.35fr;gap:4rem;margin-top:6rem;padding-top:4rem;border-top:1px solid var(--line)}.sectionTitle h2,.workTitle h2,.cta h2{margin-top:.6rem;font:700 clamp(2rem,4vw,3.8rem)/1.05 'Manrope';letter-spacing:-.04em}.serviceGrid{display:grid;grid-template-columns:1fr 1fr}.serviceGrid article{min-height:190px;padding:1.4rem;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}.serviceGrid span{color:var(--lime);font-size:.68rem}.serviceGrid h3{margin:.65rem 0 .45rem;font:700 1.15rem 'Manrope'}.serviceGrid p{color:var(--muted);font-size:.86rem}.workTitle{margin-top:7rem}.cta{margin-top:5rem;padding:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;border-radius:18px;background:var(--panel)}@media(max-width:800px){.services{grid-template-columns:1fr;gap:2rem}.cta{align-items:flex-start;flex-direction:column}}@media(max-width:520px){.serviceGrid{grid-template-columns:1fr}}

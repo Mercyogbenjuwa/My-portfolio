@@ -1,5 +1,13 @@
 [
   {
+    "id": 7,
+    "name": "Pico",
+    "description": "Contributed to a secure digital product experience, supporting a clear and dependable user journey across the platform.",
+    "tags": ["PRODUCT DELIVERY", "WEB APPLICATION", "SECURE PLATFORM"],
+    "demo": "https://ui-stg.pico.com.ng/signin",
+    "featured": true
+  },
+  {
     "id": 6,
     "name": "El-Raboni Resources",
     "image": "https://elraboniresources.com/favicon.ico",
