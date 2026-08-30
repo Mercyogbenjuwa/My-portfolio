@@ -1,41 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
-
-.main {
-  display: flex;
-  background: var(--main-bg);
-}
-
-.content {
-  padding: 2rem;
-  color: var(--text-color);
-  font-family: 'JetBrains Mono', monospace;
-  flex: 1;
-  height: 85vh;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-.content {
-  scrollbar-width: 10px;
-  scrollbar-color: var(--accent-color);
-}
-
-.content::-webkit-scrollbar {
-  width: 15px;
-}
-
-.content::-webkit-scrollbar-track {
-  background: var(--scrollbar-track-bg);
-  border-left: 1px solid #1e1f29;
-}
-
-.content::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-bg);
-  border-left: 1px solid #1e1f29;
-}
-
-@media screen and (max-width: 600px) {
-  .content {
-    padding: 2rem 1rem;
-  }
-}
+.shell{min-height:100vh;background:var(--ink);color:var(--paper)}
+.header{position:sticky;top:0;z-index:20;min-height:76px;padding:0 4vw;display:flex;align-items:center;gap:2rem;border-bottom:1px solid var(--line);background:rgba(13,18,16,.88);backdrop-filter:blur(16px)}
+.brand{display:inline-flex;align-items:center;gap:.8rem;color:var(--paper);font-weight:700;text-decoration:none;white-space:nowrap}.brandMark{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:var(--lime);color:#101510;font-size:.76rem}
+.nav{display:flex;align-items:center;gap:1.7rem;margin:0 auto}.nav a{color:var(--muted);text-decoration:none;font-size:.86rem;font-weight:600}.nav a:hover,.nav .active{color:var(--paper)}.nav .active::after{content:"";display:block;height:2px;margin-top:6px;background:var(--lime)}
+.availability{display:flex;align-items:center;gap:.55rem;color:var(--paper);font-size:.76rem;text-decoration:none}.availability span{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(186,243,94,.09)}
+.footer{max-width:1240px;margin:0 auto;padding:3rem 4vw;display:grid;grid-template-columns:1fr auto auto;align-items:end;gap:2rem;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}.footer strong{color:var(--paper)}.footer p{margin-top:.35rem}.footerLinks{display:flex;gap:1.25rem}.footerLinks a{color:var(--paper);text-decoration:none}
+@media(max-width:840px){.header{flex-wrap:wrap;padding-block:1rem;gap:1rem}.availability{display:none}.nav{order:3;width:100%;justify-content:space-between;gap:.5rem;overflow-x:auto}.footer{grid-template-columns:1fr;align-items:start}}

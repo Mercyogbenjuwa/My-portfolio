@@ -278,7 +278,8 @@ export default function AboutMe() {
             <div className={styles.skills}>
               {technicalSkills.map((skill) => (
                 <div className={styles.skill2} key={skill.name}>
-                  <img src={skill.icon} alt={`${skill.name} logo`} />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={skill.icon} alt={`${skill.name} logo`} loading="lazy" />
                   <p>{skill.name}</p>
                 </div>
               ))}

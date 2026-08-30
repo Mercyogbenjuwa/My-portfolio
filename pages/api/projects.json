@@ -1,5 +1,14 @@
 [
   {
+    "id": 6,
+    "name": "El-Raboni Resources",
+    "image": "https://elraboniresources.com/favicon.ico",
+    "description": "Contributed to the digital experience for El-Raboni Resources, creating a clear, credible platform for customers to discover the company and engage with its services.",
+    "tags": ["WEB DEVELOPMENT", "PRODUCT DELIVERY", "RESPONSIVE UI"],
+    "demo": "https://elraboniresources.com/",
+    "featured": true
+  },
+  {
     "id": 1,
     "name": "Optimus Bank",
     "image": "https://imgur.com/h5MnFjA.png",
@@ -13,7 +22,8 @@
     "image": "https://imgur.com/0owKFeL.png",
     "description": "Led and contributed to a monitoring platform for infrastructure, application performance, logs, database health, alerts, runtime visibility, and operational diagnostics. The platform helps teams detect system issues early and respond faster.",
     "tags": ["GO", ".NET", "REACT", "TYPESCRIPT", "POSTGRESQL","TIME-SCALEDB", "MSSQLSERVER", "AZURE","DOCKER", "MONITORING", "DEVOPS", "KURBERNETES", "OPEN-TELEMETRY", "PROMETHEUS", "GRAFANA"],
-    "demo": "https://prod-ncg.edge.ncgafrica.com/login"
+    "demo": "https://prod-ncg.edge.ncgafrica.com/login",
+    "featured": true
   },
   {
     "id": 3,

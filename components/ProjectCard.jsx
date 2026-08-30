@@ -1,16 +1,16 @@
-import Image from 'next/image';
 import styles from '../styles/ProjectCard.module.css';
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className={styles.card}>
-      <Image src={project.image} height={300} width={600} alt={project.name} />
+    <article className={`${styles.card} ${project.featured ? styles.featured : ''}`}>
+      <div className={styles.number}>0{project.id}</div>
       <div className={styles.content}>
+        {project.featured && <span className={styles.flag}>Featured</span>}
         <h3>{project.name}</h3>
         <p>{project.description}</p>
         <div className={styles.tags}>
           {project.tags.map((tag) => (
-            <span key={tag} className={tag}>
+            <span key={tag}>
               {tag}
             </span>
           ))}
@@ -32,11 +32,11 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             className={styles.underline}
           >
-            Live Demo
+            Visit project <span aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

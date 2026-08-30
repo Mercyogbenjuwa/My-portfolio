@@ -1,35 +1,26 @@
-import Titlebar from '../components/Titlebar'
-import Sidebar from '../components/Sidebar'
-import Explorer from '../components/Explorer'
-import Bottombar from '../components/Bottombar'
-import Tabsbar from './Tabsbar'
-import styles from '../styles/Layout.module.css'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import Link from "next/link";
+import { useRouter } from "next/router";
+import styles from "../styles/Layout.module.css";
 
-const Layout = ({ children }) => {
-  // set scroll to top of main content on url pathname change
-  const router = useRouter()
-  useEffect(() => {
-    const main = document.getElementById('main-editor')
-    main.scrollTop = 0
-  }, [router.pathname])
+const navigation = [["Home", "/"], ["Work", "/projects"], ["About", "/about"], ["Experience", "/resume"], ["Contact", "/contact"]];
+
+export default function Layout({ children }) {
+  const router = useRouter();
   return (
-    <>
-      <Titlebar />
-      <div className={styles.main}>
-        <Sidebar />
-        <Explorer />
-        <div style={{ width: '100%' }}>
-          <Tabsbar />
-          <main id="main-editor" className={styles.content}>
-            {children}
-          </main>
-        </div>
-      </div>
-      <Bottombar />
-    </>
-  )
+    <div className={styles.shell}>
+      <header className={styles.header}>
+        <Link href="/"><a className={styles.brand} aria-label="Mercy Ogbenjuwa, home"><span className={styles.brandMark}>MO</span><span>Mercy Ogbenjuwa</span></a></Link>
+        <nav className={styles.nav} aria-label="Main navigation">
+          {navigation.map(([label, href]) => <Link href={href} key={href}><a className={router.pathname === href ? styles.active : ""}>{label}</a></Link>)}
+        </nav>
+        <a className={styles.availability} href="mailto:ogbenjuwamercyonyoibo@gmail.com"><span aria-hidden="true" /> Available for opportunities</a>
+      </header>
+      <main>{children}</main>
+      <footer className={styles.footer}>
+        <div><strong>Mercy Ogbenjuwa Ikya</strong><p>Product Manager &amp; Senior Product Engineer</p></div>
+        <div className={styles.footerLinks}><a href="mailto:ogbenjuwamercyonyoibo@gmail.com">Email</a><a href="https://github.com/Mercyogbenjuwa" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mercy-ogbenjuwa-178805227" target="_blank" rel="noreferrer">LinkedIn</a></div>
+        <p>© {new Date().getFullYear()} Built with care in Lagos.</p>
+      </footer>
+    </div>
+  );
 }
-
-export default Layout

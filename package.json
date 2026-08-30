@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
     "@notionhq/client": "^0.2.2",
@@ -16,6 +18,8 @@
     "react-github-calendar": "^3.2.2"
   },
   "devDependencies": {
-    "browserslist": "^4.24.4"
+    "browserslist": "^4.24.4",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "12.3.7"
   }
 }

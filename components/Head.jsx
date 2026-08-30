@@ -1,25 +1,27 @@
 import Head from 'next/head';
 
 const CustomHead = ({ title }) => {
+  const fullTitle = title === 'Mercy Ogbenjuwa' ? title : `${title} — Mercy Ogbenjuwa`;
   return (
     <Head>
-      <title>{title}</title>
+      <title>{fullTitle}</title>
       <meta
         name="description"
-        content="Mercy Ogbenjuwa is an avid full stack engineer building websites and applications you'd love to use"
+        content="Product Manager and Senior Product Engineer building reliable financial, enterprise and operational software."
       />
       <meta
         name="keywords"
         content="Mercy Ogbenjuwa, druxamb, engineer portfolio, mern stack, next.js, react, node.js, express, mongodb, .net, c#, go, gin, fiber, echo, nestjs"
       />
-      <meta property="og:title" content="Mercy Ogbenjuwa Portfolio" />
+      <meta property="og:title" content={fullTitle} />
       <meta
         property="og:description"
-        content="A full-stack engineer building websites that you'd like to use."
+        content="Product Manager and Senior Product Engineer building reliable financial, enterprise and operational software."
       />
-      <meta property="og:image" content="https://imgur.com/4zi5KkQ.png" />
-      <meta property="og:url" content="https://vscode-portfolio.vercel.app" />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="og:url" content="https://mercyogbenjuwaikya.com" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="theme-color" content="#0d1210" />
+      <link rel="canonical" href="https://mercyogbenjuwaikya.com" />
     </Head>
   );
 };
