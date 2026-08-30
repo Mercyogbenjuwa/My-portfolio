@@ -120,7 +120,6 @@ export async function getStaticProps() {
         repos,
         user,
       },
-      revalidate: 3600,
     };
   } catch (error) {
     console.error("GitHub page build fallback:", error.message);
@@ -131,7 +130,6 @@ export async function getStaticProps() {
         repos: [],
         user: fallbackUser,
       },
-      revalidate: 3600,
     };
   }
 }
