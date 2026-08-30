@@ -3,6 +3,19 @@ import styles from "../styles/ContactPage.module.css";
 const services = ["Product strategy & delivery", "Web and mobile applications", "Backend systems & APIs", "ERP and workflow automation", "Cloud, DevOps & monitoring", "Technical product consulting"];
 
 export default function ContactPage() {
+  const submitForm = (event) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const name = form.get("name");
+    const email = form.get("email");
+    const service = form.get("service");
+    const details = form.get("details");
+    const subject = `${service} enquiry from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\nService: ${service}\n\nProject details:\n${details}`;
+    const composeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=ogbenjuwamercyonyoibo@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(composeUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div className={styles.page}>
       <section className={styles.intro}>
@@ -18,13 +31,13 @@ export default function ContactPage() {
       </section>
 
       <section className={styles.card}>
-        <div className={styles.cardHead}><span>Available for select projects</span><b aria-hidden="true" /></div>
+        <div className={styles.cardHead}><span>Available for new projects</span><b aria-hidden="true" /></div>
         <h2>Tell me what you’re working on.</h2>
-        <p>Share your goal, timeline and where you need support. This opens your email app with everything ready to send—no broken form or lost message.</p>
-        <form action="mailto:ogbenjuwamercyonyoibo@gmail.com" method="get" encType="text/plain" className={styles.form}>
+        <p>Share your goal, timeline and where you need support. I’ll prepare a secure Gmail draft with your enquiry, ready for you to review and send.</p>
+        <form className={styles.form} onSubmit={submitForm}>
           <div className={styles.row}><label><span>Your name</span><input name="name" type="text" placeholder="Jane Smith" required /></label><label><span>Email address</span><input name="email" type="email" placeholder="jane@company.com" required /></label></div>
-          <label><span>What do you need help with?</span><select name="subject" defaultValue=""><option value="" disabled>Select a service</option>{services.map((service)=><option value={service} key={service}>{service}</option>)}</select></label>
-          <label><span>Project details</span><textarea name="body" rows="6" placeholder="A short description of the product, the challenge and your ideal timeline…" required /></label>
+          <label><span>What do you need help with?</span><select name="service" defaultValue="" required><option value="" disabled>Select a service</option>{services.map((service)=><option value={service} key={service}>{service}</option>)}</select></label>
+          <label><span>Project details</span><textarea name="details" rows="6" placeholder="A short description of the product, the challenge and your ideal timeline…" required /></label>
           <button type="submit">Send project enquiry <span aria-hidden="true">↗</span></button>
         </form>
       </section>
