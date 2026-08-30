@@ -18,7 +18,7 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <footer className={styles.footer}>
         <div><strong>Mercy Ogbenjuwa Ikya</strong><p>Product Manager &amp; Senior Product Engineer</p></div>
-        <div className={styles.footerLinks}><a href="mailto:ogbenjuwamercyonyoibo@gmail.com">Email</a><a href="https://github.com/Mercyogbenjuwa" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mercy-ogbenjuwa-178805227" target="_blank" rel="noreferrer">LinkedIn</a></div>
+        <div className={styles.footerLinks}><a href="mailto:ogbenjuwamercyonyoibo@gmail.com">Email</a><a href="tel:+2349027918134">Phone</a><a href="https://github.com/Mercyogbenjuwa" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mercy-ogbenjuwa-178805227" target="_blank" rel="noreferrer">LinkedIn</a></div>
         <p>© {new Date().getFullYear()} Built with care in Lagos.</p>
       </footer>
     </div>

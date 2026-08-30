@@ -10,8 +10,10 @@ export default function ContactPage() {
         <h1>Have a product to build or a difficult system to improve?</h1>
         <p>I help teams turn business needs into dependable digital products—from early product thinking through engineering and launch.</p>
         <div className={styles.direct}>
-          <span>Prefer email?</span>
+          <span>Contact me directly</span>
           <a href="mailto:ogbenjuwamercyonyoibo@gmail.com">ogbenjuwamercyonyoibo@gmail.com ↗</a>
+          <br />
+          <a href="tel:+2349027918134">+234 902 791 8134 ↗</a>
         </div>
       </section>
 
