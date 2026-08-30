@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 const CustomHead = ({ title }) => {
-  const fullTitle = title === 'Mercy Ogbenjuwa' ? title : `${title} — Mercy Ogbenjuwa`;
+  const fullTitle = title === 'Mercy Ogbenjuwa Ikya' ? title : `${title} — Mercy Ogbenjuwa Ikya`;
   return (
     <Head>
       <title>{fullTitle}</title>
@@ -21,6 +21,7 @@ const CustomHead = ({ title }) => {
       <meta property="og:url" content="https://mercyogbenjuwaikya.com" />
       <meta name="twitter:card" content="summary" />
       <meta name="theme-color" content="#0d1210" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="canonical" href="https://mercyogbenjuwaikya.com" />
     </Head>
   );

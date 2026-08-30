@@ -21,4 +21,4 @@ export default function HomePage() {
     </section>
   </>;
 }
-export async function getStaticProps(){return{props:{title:"Mercy Ogbenjuwa"}}}
+export async function getStaticProps(){return{props:{title:"Mercy Ogbenjuwa Ikya"}}}

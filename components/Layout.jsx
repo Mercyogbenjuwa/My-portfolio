@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   return (
     <div className={styles.shell}>
       <header className={styles.header}>
-        <Link href="/"><a className={styles.brand} aria-label="Mercy Ogbenjuwa, home"><span className={styles.brandMark}>MO</span><span>Mercy Ogbenjuwa</span></a></Link>
+        <Link href="/"><a className={styles.brand} aria-label="Mercy Ogbenjuwa Ikya, home"><span className={styles.brandMark}>MI</span><span>Mercy Ogbenjuwa Ikya</span></a></Link>
         <nav className={styles.nav} aria-label="Main navigation">
           {navigation.map(([label, href]) => <Link href={href} key={href}><a className={router.pathname === href ? styles.active : ""}>{label}</a></Link>)}
         </nav>
