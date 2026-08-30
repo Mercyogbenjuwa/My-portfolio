@@ -8,7 +8,7 @@ export default function HomePage() {
   return <>
     <section className={styles.hero}>
       <div className={styles.heroCopy}><p className="eyebrow">Product leader · Software engineer</p><h1>I turn complex operations into <em>clear, reliable products.</em></h1><p className={styles.intro}>I’m Mercy — a Product Manager and Senior Product Engineer with 6+ years of experience shipping financial, enterprise and operational platforms.</p><div className={styles.actions}><Link href="/projects"><a className="button">Explore my work <span>↗</span></a></Link><Link href="/contact"><a className="button secondary">Let’s work together</a></Link></div></div>
-      <div className={styles.portrait}><div className={styles.imageWrap}><Image src="/profile.png" alt="Mercy Ogbenjuwa" layout="fill" objectFit="cover" priority /></div><div className={styles.note}><span>Currently</span><strong>Leading product delivery at Nathan Claire Africa</strong></div></div>
+      <div className={styles.portrait}><div className={styles.imageWrap}><Image src="/profile.png" alt="Mercy Ogbenjuwa" layout="fill" objectFit="cover" priority /></div><div className={styles.note}><span>Currently</span><strong>Leading product management for the Edge monitoring agent at Nathan Claire Africa</strong></div></div>
     </section>
     <section className={styles.marquee} aria-label="Areas of expertise">{capabilities.map((item)=><span key={item}>{item}<b>✦</b></span>)}</section>
     <section className={styles.snapshot}>
