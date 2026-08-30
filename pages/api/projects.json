@@ -1,13 +1,5 @@
 [
   {
-    "id": 7,
-    "name": "Pico",
-    "description": "Contributed to a secure digital product experience, supporting a clear and dependable user journey across the platform.",
-    "tags": ["PRODUCT DELIVERY", "WEB APPLICATION", "SECURE PLATFORM"],
-    "demo": "https://ui-stg.pico.com.ng/signin",
-    "featured": true
-  },
-  {
     "id": 6,
     "name": "El-Raboni Resources",
     "image": "https://elraboniresources.com/favicon.ico",
@@ -39,7 +31,7 @@
     "image": "https://imgur.com/RcuNmhZ.png",
     "description": "Led frontend delivery for an ERP platform covering employee management, payroll, performance management, questionnaires, approvals, admin workflows, dashboards, and business process automation.",
     "tags": ["REACT", "TYPESCRIPT", "TAILWINDCSS", "ERP", "PAYROLL", "SHADCN","ODOO"],
-    "demo": "https://dashboard.convergerp.com/signin"
+    "demo": "https://ui-stg.pico.com.ng/signin"
   },
   {
     "id": 4,
