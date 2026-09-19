@@ -9,6 +9,13 @@ const educationHistory = [
 
 const professionalExperience = [
   {
+    company: "Juwa Tech",
+    location: "Nigeria / Remote",
+    workType: "Founder",
+    role: "Founder & Product Manager",
+    duration: "SEP. 2026 - PRESENT",
+  },
+  {
     company: "Nathan Claire Africa",
     location: "London, United Kingdom",
     workType: "Full-time",

@@ -1,52 +1,9 @@
 [
-  {
-    "id": 6,
-    "name": "El-Raboni Resources",
-    "image": "https://elraboniresources.com/favicon.ico",
-    "description": "Contributed to the digital experience for El-Raboni Resources, creating a clear, credible platform for customers to discover the company and engage with its services.",
-    "tags": ["WEB DEVELOPMENT", "PRODUCT DELIVERY", "RESPONSIVE UI"],
-    "demo": "https://elraboniresources.com/",
-    "featured": true
-  },
-  {
-    "id": 1,
-    "name": "Optimus Bank",
-    "image": "https://imgur.com/h5MnFjA.png",
-    "description": "Worked on multiple banking products, including a payday loan system, credit registry, PAPSS transfer integration, two-factor authentication, fraud detection, trade monitoring, and internal banking workflow improvements.",
-    "tags": [".NET", "C#", "REACT", "PROCESS-MAKER", "AZURE", "TYPESCRIPT", "MSSQLSERVER"],
-    "demo": "https://www.optimusbank.com/"
-  },
-  {
-    "id": 2,
-    "name": "Edge Monitoring",
-    "image": "https://imgur.com/0owKFeL.png",
-    "description": "Led and contributed to a monitoring platform for infrastructure, application performance, logs, database health, alerts, runtime visibility, and operational diagnostics. The platform helps teams detect system issues early and respond faster.",
-    "tags": ["GO", ".NET", "REACT", "TYPESCRIPT", "POSTGRESQL","TIME-SCALEDB", "MSSQLSERVER", "AZURE","DOCKER", "MONITORING", "DEVOPS", "KURBERNETES", "OPEN-TELEMETRY", "PROMETHEUS", "GRAFANA"],
-    "demo": "https://prod-ncg.edge.ncgafrica.com/login",
-    "featured": true
-  },
-  {
-    "id": 3,
-    "name": "Converge ERP",
-    "image": "https://imgur.com/RcuNmhZ.png",
-    "description": "Led frontend delivery for an ERP platform covering employee management, payroll, performance management, questionnaires, approvals, admin workflows, dashboards, and business process automation.",
-    "tags": ["REACT", "TYPESCRIPT", "TAILWINDCSS", "ERP", "PAYROLL", "SHADCN","ODOO"],
-    "demo": "https://ui-stg.pico.com.ng/signin"
-  },
-  {
-    "id": 4,
-    "name": "Kobi",
-    "image": "https://imgur.com/MJaVZ5e.png",
-    "description": "Worked on a court process and project management platform used to manage county-based workflows, users, projects, form builders, approvals, and structured operational processes.",
-    "tags": ["C#","REACT", "TYPESCRIPT",".NET","DIRECTUS", "AWS", "DOCKER"],
-    "demo": "https://staging.kobiii.com/projects"
-  },
-  {
-    "id": 5,
-    "name": "Cscs Custodian Portal",
-    "image": "https://imgur.com/Be35199.png",
-    "description": "Built and improved a custodian portal for managing stocks, accounts, portfolios, trade activities, account operations, and cross-exchange trade execution.",
-    "tags": [".NET", "C#", "GO", "JAVASCRIPT", "JQUERY", "TYPESCRIPT", "MSSQLSERVER", "ENTITY FRAMEWORK", "STORED PROCEDURES", "IIS WEB SERVER", "SIGNAL-R"],
-    "demo": "https://custodian.cscs.ng/"
-  }
+  {"id":1,"name":"CSCS Custodian Portal","image":"https://imgur.com/Be35199.png","description":"Built and improved a custodian portal for managing stocks, accounts, portfolios, trade activities, account operations, and cross-exchange trade execution.","tags":[".NET","C#","GO","JAVASCRIPT","TYPESCRIPT","MSSQLSERVER","STORED PROCEDURES","IIS","SIGNALR"],"demo":"https://custodian.cscs.ng/","featured":true},
+  {"id":2,"name":"Optimus Bank","image":"https://imgur.com/h5MnFjA.png","description":"Worked on banking products including payday lending, credit registry, PAPSS transfers, two-factor authentication, fraud detection, trade monitoring, and internal workflow improvements.","tags":[".NET","C#","REACT","PROCESSMAKER","AZURE","TYPESCRIPT","MSSQLSERVER"],"demo":"https://www.optimusbank.com/","featured":true},
+  {"id":3,"name":"Juwa Tech","image":"https://juwatech.com/favicon.svg","description":"Founded and built Juwa Tech as a technology company delivering expert services and practical business products, including the upcoming Juwa Hub platform.","tags":["FOUNDER","PRODUCT MANAGEMENT","SOFTWARE ENGINEERING","CLOUD","BUSINESS PLATFORMS"],"demo":"https://juwatech.com/","featured":true},
+  {"id":4,"name":"Edge Monitoring","image":"https://imgur.com/0owKFeL.png","description":"Led and contributed to a monitoring platform for infrastructure, application performance, logs, database health, alerts, runtime visibility, and operational diagnostics.","tags":["GO",".NET","REACT","TYPESCRIPT","POSTGRESQL","TIMESCALEDB","AZURE","DOCKER","KUBERNETES","OPENTELEMETRY"],"demo":"https://prod-ncg.edge.ncgafrica.com/login"},
+  {"id":5,"name":"Converge ERP","image":"https://imgur.com/RcuNmhZ.png","description":"Led frontend delivery for an ERP platform covering employee management, payroll, performance management, questionnaires, approvals, dashboards, and workflow automation.","tags":["REACT","TYPESCRIPT","TAILWINDCSS","ERP","PAYROLL","SHADCN","ODOO"],"demo":"https://ui-stg.pico.com.ng/signin"},
+  {"id":6,"name":"Kobi","image":"https://imgur.com/MJaVZ5e.png","description":"Worked on a court process and project management platform for county-based workflows, users, projects, form builders, approvals, and structured operations.","tags":["C#","REACT","TYPESCRIPT",".NET","DIRECTUS","AWS","DOCKER"],"demo":"https://staging.kobiii.com/projects"},
+  {"id":7,"name":"El-Raboni Resources","image":"https://elraboniresources.com/favicon.ico","description":"Created a clear, credible digital platform for customers to discover El-Raboni Resources and engage with its services.","tags":["WEB DEVELOPMENT","PRODUCT DELIVERY","RESPONSIVE UI"],"demo":"https://elraboniresources.com/"}
 ]

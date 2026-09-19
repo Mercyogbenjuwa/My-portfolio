@@ -7,7 +7,7 @@ const CustomHead = ({ title }) => {
       <title>{fullTitle}</title>
       <meta
         name="description"
-        content="Product Manager and Senior Product Engineer building reliable financial, enterprise and operational software."
+        content="Founder of Juwa Tech, Product Manager and Senior Product Engineer building reliable financial, enterprise and operational software."
       />
       <meta
         name="keywords"
@@ -16,7 +16,7 @@ const CustomHead = ({ title }) => {
       <meta property="og:title" content={fullTitle} />
       <meta
         property="og:description"
-        content="Product Manager and Senior Product Engineer building reliable financial, enterprise and operational software."
+        content="Founder of Juwa Tech, Product Manager and Senior Product Engineer building reliable financial, enterprise and operational software."
       />
       <meta property="og:url" content="https://mercyogbenjuwaikya.com" />
       <meta name="twitter:card" content="summary" />
