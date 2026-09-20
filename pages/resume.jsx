@@ -12,7 +12,6 @@ const professionalExperience = [
     company: "Juwa Tech",
     location: "Nigeria / Remote",
     workType: "Founder",
-    role: "Founder & Product Manager",
     duration: "SEP. 2026 - PRESENT",
   },
   {
@@ -84,7 +83,7 @@ const ResumePage = () => {
             <h4 className={styles.resumeHead}>{experience.company}</h4>
             <div>{experience.location}</div>
             <div>{experience.workType}</div>
-            <div>{experience.role}</div>
+            {experience.role && <div>{experience.role}</div>}
             <div>{experience.duration}</div>
           </div>
         ))}

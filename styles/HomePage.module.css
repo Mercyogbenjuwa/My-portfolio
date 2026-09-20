@@ -5,3 +5,11 @@
 /* Keep the primary message strong without overpowering the portrait and supporting copy. */
 .heroCopy h1{max-width:780px;font-size:clamp(2.8rem,5.5vw,5.6rem);line-height:1;letter-spacing:-.055em}
 @media(max-width:560px){.heroCopy h1{font-size:2.65rem}}
+
+.heroCopy h1{max-width:680px;font-size:clamp(2.5rem,4.6vw,4.7rem);line-height:1.02}
+.marquee{padding-inline:0}
+.marqueeTrack{display:flex;width:max-content;gap:2.2rem;animation:expertise-scroll 28s linear infinite}
+.marqueeTrack span{display:inline-flex;align-items:center}
+@keyframes expertise-scroll{to{transform:translateX(-50%)}}
+@media(max-width:560px){.heroCopy h1{font-size:2.25rem}.marqueeTrack{animation-duration:22s}}
+@media(prefers-reduced-motion:reduce){.marqueeTrack{animation:none}}
