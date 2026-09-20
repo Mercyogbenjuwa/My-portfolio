@@ -5,10 +5,10 @@ import styles from "../styles/ProjectsPage.module.css";
 
 const ProjectsPage = ({ projects }) => {
   const services = [
-    { title: "Product strategy & delivery", text: "Roadmaps, discovery, requirements, stakeholder alignment and delivery leadership from idea to launch." },
+    { title: "Product management & delivery", text: "Research, discovery, roadmaps, requirements, product documentation, stakeholder alignment and delivery from idea to launch." },
     { title: "Custom software development", text: "Responsive web applications and internal tools built around real business workflows." },
-    { title: "Backend systems & APIs", text: "Secure services, integrations, databases and scalable application architecture." },
-    { title: "ERP & process automation", text: "Operational platforms that replace manual work with clear, dependable workflows." },
+    { title: "Backend systems & API integrations", text: "Secure services, third-party integrations, databases and scalable application architecture." },
+    { title: "Enterprise & process platforms", text: "Loan systems, PACS, CRM, trade management, ERP and operational workflows built for dependable day-to-day use." },
     { title: "Cloud, DevOps & monitoring", text: "Deployment pipelines, observability and platform improvements that keep products reliable." },
     { title: "Technical product consulting", text: "Practical support for teams making product, architecture and delivery decisions." },
   ];
