@@ -20,7 +20,7 @@ export default function AboutPage() {
             <Link href="/contact"><a className="text-link">Work with me <span aria-hidden="true">→</span></a></Link>
           </div>
         </div>
-        <div className={styles.portrait}><Image src="/profile.png" alt="Mercy Ogbenjuwa Ikya" layout="fill" objectFit="cover" priority /></div>
+        <div className={styles.portrait}><Image src="/portrait.png" alt="Mercy Ogbenjuwa Ikya" layout="fill" objectFit="cover" priority /></div>
       </section>
     </div>
     <section className={styles.focus}>

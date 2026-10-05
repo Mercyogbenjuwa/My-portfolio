@@ -37,11 +37,11 @@ export default function HomePage({ projects }) {
 
     <section className={styles.aboutBand}>
       <div className={styles.about}>
-        <div className={styles.photo} data-reveal><Image src="/profile.png" alt="Mercy Ogbenjuwa Ikya" layout="fill" objectFit="cover" /></div>
+        <div className={styles.photo} data-reveal><Image src="/portrait.png" alt="Mercy Ogbenjuwa Ikya" layout="fill" objectFit="cover" /></div>
         <div data-reveal style={{ "--d": ".12s" }}>
           <p className="eyebrow">About</p>
           <h2 className="section-title">Clear plans. Solid builds.</h2>
-          <p>I turn what a business needs into a clear plan, then work alongside engineers to ship it. Since 2021, that has taken me through insurance, banking, capital markets and my own company.</p>
+          <p>I turn what a business needs into a clear plan, then work alongside engineers to ship it. I’ve done it in insurance, banking, capital markets and now my own company.</p>
           <Link href="/about"><a className="text-link">More about me <span aria-hidden="true">→</span></a></Link>
         </div>
       </div>

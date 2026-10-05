@@ -1,4 +1,4 @@
-.stage{--step:14deg;position:relative;width:min(1100px,calc(100% - 40px));height:clamp(340px,31vw,420px);margin:48px auto 0;border:1px solid var(--hairline);border-radius:32px;background:radial-gradient(120% 90% at 50% 100%,#f1e3e3 0%,var(--surface) 55%);overflow:hidden}
+.stage{--step:14deg;position:relative;width:min(1264px,calc(100% - var(--gutter) * 2));height:clamp(340px,31vw,420px);margin:48px auto 0;border:1px solid var(--hairline);border-radius:32px;background:radial-gradient(120% 90% at 50% 100%,#f1e3e3 0%,var(--surface) 55%);overflow:hidden}
 .slot{--w:clamp(120px,12vw,168px);--angle:calc(var(--o) * var(--step));position:absolute;top:44px;left:50%;width:var(--w);margin-left:calc(var(--w) / -2);aspect-ratio:.62;transform-origin:50% 300%;transform:rotate(var(--angle))}
 .card{width:100%;height:100%;border-radius:14px;overflow:hidden;box-shadow:-14px 14px 30px rgba(22,18,19,.2)}
 /* Opens and closes like a hand fan: stacked, spread with gaps, hold, fold back. */
