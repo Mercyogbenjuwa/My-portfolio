@@ -8,6 +8,7 @@ export default function ProjectCard({ project, index, detailed = false }) {
         <div className={styles.zoom}><ProjectCover project={project} index={index} /></div>
         <span className={styles.view} aria-hidden="true">Visit ↗</span>
       </div>
+      <span className={styles.category}>{project.category}</span>
       <h3>{project.name}<span aria-hidden="true">↗</span></h3>
       <p className={detailed ? styles.full : ""}>{project.description}</p>
       {detailed && <div className={styles.tags}>{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>}

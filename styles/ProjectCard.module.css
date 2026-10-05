@@ -9,6 +9,7 @@
   .card:hover .view{opacity:1;transform:none}
 }
 .card:focus-visible .view{opacity:1;transform:none}
+.category{display:block;margin-bottom:4px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .card h3{display:flex;justify-content:space-between;gap:12px;font-size:19px;margin-bottom:6px}
 .card h3 span{color:var(--primary);transition:transform .25s ease}
 .card:hover h3 span{transform:translate(3px,-3px)}
@@ -16,4 +17,5 @@
 .card p.full{display:block}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
 .tags span{padding:4px 10px;border:1px solid var(--hairline);border-radius:999px;color:var(--muted);font-size:11px}
-@media(max-width:520px){.card h3{font-size:15px}.card p{font-size:13px}.tags{display:none}}
+@media(max-width:520px){.category{display:block;margin-bottom:4px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.card h3{font-size:15px}.card p{font-size:13px}.tags{display:none}}
