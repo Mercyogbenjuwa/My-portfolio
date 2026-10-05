@@ -12,7 +12,10 @@ export default function Layout({ children }) {
       <header className={styles.header}>
         <div className={styles.bar}>
           <nav className={styles.nav} aria-label="Main navigation">
-            <Link href="/"><a className={styles.brand}>Mercy Ogbenjuwa Ikya</a></Link>
+            <Link href="/"><a className={styles.brand}>
+              {/* eslint-disable-next-line @next/next/no-img-element -- small static SVG mark */}
+              <img src="/logo-mark.svg" alt="" width="34" height="34" />Mercy Ogbenjuwa Ikya
+            </a></Link>
             <div className={styles.links}>
               {navigation.map(([label, href]) => <Link href={href} key={href}><a className={router.pathname === href ? styles.active : ""}>{label}</a></Link>)}
             </div>
