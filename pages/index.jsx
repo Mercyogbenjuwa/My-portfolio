@@ -41,7 +41,7 @@ export default function HomePage({ projects }) {
         <div data-reveal style={{ "--d": ".12s" }}>
           <p className="eyebrow">About</p>
           <h2 className="section-title">Clear plans. Solid builds.</h2>
-          <p>I turn what a business needs into a clear plan, then work alongside engineers to ship it. Five years across insurance, banking, capital markets and my own company.</p>
+          <p>I turn what a business needs into a clear plan, then work alongside engineers to ship it. Since 2021, that has taken me through insurance, banking, capital markets and my own company.</p>
           <Link href="/about"><a className="text-link">More about me <span aria-hidden="true">→</span></a></Link>
         </div>
       </div>
