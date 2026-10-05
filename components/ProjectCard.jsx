@@ -1,43 +1,17 @@
-import styles from '../styles/ProjectCard.module.css';
+import ProjectCover from "./ProjectCover";
+import styles from "../styles/ProjectCard.module.css";
 
-const ProjectCard = ({ project }) => {
+export default function ProjectCard({ project, index, detailed = false }) {
   return (
-    <article className={`${styles.card} ${project.featured ? styles.featured : ''}`}>
-      <div className={styles.number}>0{project.id}</div>
-      <div className={styles.content}>
-        {project.featured && <span className={styles.flag}>Featured</span>}
-        <h3>{project.name}</h3>
-        <p>{project.description}</p>
-        <div className={styles.tags}>
-          {project.tags.map((tag) => (
-            <span key={tag}>
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className={styles.cta}>
-          {project.source_code && (
-            <a
-              href={project.source_code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.underline}
-            >
-              Source Code
-            </a>
-          )}
-          <a
-            href={project.demo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.underline}
-          >
-            Visit project <span aria-hidden="true">↗</span>
-          </a>
-        </div>
+    <a className={styles.card} href={project.demo} target="_blank" rel="noopener noreferrer">
+      <div className={`${styles.image} ${detailed ? styles.wide : ""}`}>
+        <ProjectCover project={project} index={index} />
+        {project.live && <span className={styles.live}>Live</span>}
+        <span className={styles.view} aria-hidden="true">Visit project ↗</span>
       </div>
-    </article>
+      <h3>{project.name}<span aria-hidden="true">↗</span></h3>
+      <p className={detailed ? styles.full : ""}>{project.description}</p>
+      {detailed && <div className={styles.tags}>{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>}
+    </a>
   );
-};
-
-export default ProjectCard;
+}
