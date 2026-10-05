@@ -1,7 +1,7 @@
 import ProjectCover from "./ProjectCover";
 import styles from "../styles/ProjectFan.module.css";
 
-const STEP = 12.5;
+const STEP = 13;
 
 // Lead project sits in the centre; the rest alternate outwards.
 function fanOrder(projects) {
@@ -16,15 +16,18 @@ export default function ProjectFan({ projects }) {
   const middle = (cards.length - 1) / 2;
   return (
     <div className={styles.stage} aria-hidden="true">
-      {cards.map(({ project, index }, position) => (
-        <div
-          key={project.id}
-          className={styles.card}
-          style={{ "--angle": `${(position - middle) * STEP}deg`, zIndex: 10 - Math.abs(position - middle) }}
-        >
-          <ProjectCover project={project} index={index} size="fan" />
-        </div>
-      ))}
+      {cards.map(({ project, index }, position) => {
+        const offset = position - middle;
+        return (
+          <div
+            key={project.id}
+            className={styles.slot}
+            style={{ "--angle": `${offset * STEP}deg`, "--delay": `${0.25 + Math.abs(offset) * 0.09}s`, zIndex: 10 - Math.abs(offset) }}
+          >
+            <div className={styles.card}><ProjectCover project={project} index={index} size="fan" /></div>
+          </div>
+        );
+      })}
     </div>
   );
 }
