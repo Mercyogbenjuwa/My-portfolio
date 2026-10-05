@@ -1,0 +1,21 @@
+{
+  "default_branch": "staging",
+  "branches": [
+    "claude/project-thread-m67a57",
+    "claude/project-thread-qbip8x",
+    "origin",
+    "staging"
+  ],
+  "parent": {
+    "claude/project-thread-m67a57": "staging",
+    "claude/project-thread-qbip8x": "staging",
+    "origin": "staging",
+    "staging": null
+  },
+  "order": [
+    "staging",
+    "claude/project-thread-m67a57",
+    "claude/project-thread-qbip8x",
+    "origin"
+  ]
+}
