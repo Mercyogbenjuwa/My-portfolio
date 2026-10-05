@@ -21,8 +21,9 @@ const CustomHead = ({ title }) => {
       <meta property="og:url" content="https://mercyogbenjuwaikya.com" />
       <meta name="twitter:card" content="summary" />
       <meta name="theme-color" content="#7a1f35" />
-      <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
-      <link rel="shortcut icon" href="/favicon.svg?v=2" />
+      <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+      <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" />
       <link rel="canonical" href="https://mercyogbenjuwaikya.com" />
     </Head>
   );

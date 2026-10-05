@@ -11,9 +11,9 @@ export default function AboutPage() {
       <section className={`${styles.hero} arrive`}>
         <div>
           <p className="eyebrow eyebrow-line">About Mercy</p>
-          <h1 className="page-title">A product manager who can build the thing.</h1>
-          <p>I’m the founder of Juwa Tech, a product manager and a senior product engineer. I’ve worked on banking and capital-markets platforms, ERP systems, monitoring tools and business apps.</p>
-          <p>My strength is range. I can align stakeholders, shape the roadmap, read the architecture and work side by side with engineers until the product ships.</p>
+          <h1 className="page-title">Product thinking with real engineering behind it.</h1>
+          <p>I’m the founder of Juwa Tech, a product manager with a senior engineering background. I’ve worked on banking and capital markets platforms, ERP systems, monitoring tools and Juwa Hub, our platform for small businesses.</p>
+          <p>Because I’ve written production code, I speak both the business’s language and the engineers’. I keep scope honest, make clear calls and stay with a product until it’s live and working.</p>
           <div className={styles.facts}>{facts.map((fact) => <span key={fact}>{fact}</span>)}</div>
           <div className={styles.actions}>
             <Link href="/projects"><a className="button">See selected work <span aria-hidden="true">↗</span></a></Link>

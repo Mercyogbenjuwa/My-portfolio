@@ -2,7 +2,7 @@
 .header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(14px)}
 .bar{max-width:1440px;margin:0 auto;padding:0 var(--gutter)}
 .nav{min-height:84px;display:flex;align-items:center;gap:28px;border-bottom:1px solid var(--hairline)}
-.brand{color:var(--text);font-size:16px;font-weight:600;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
+.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);font-size:16px;font-weight:600;letter-spacing:-.02em;text-decoration:none;white-space:nowrap}
 .links{display:flex;align-items:center;gap:30px;margin:0 auto}
 .links a{color:var(--muted);font-size:13px;font-weight:600;text-decoration:none}
 .links a:hover,.links .active{color:var(--text)}
@@ -19,3 +19,6 @@
   .links{order:3;width:100%;margin:0;gap:24px;overflow-x:auto;padding-bottom:12px}
   .links .active::after{margin-top:3px}
 }
+
+.brand img{flex:none;border-radius:10px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.brand:hover img{transform:rotate(-8deg) scale(1.05)}
