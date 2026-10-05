@@ -12,7 +12,7 @@
 
 .aboutBand{background:var(--surface);padding:clamp(56px,7vw,104px) var(--gutter)}
 .about{max-width:1264px;margin:0 auto;display:grid;grid-template-columns:.42fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
-.photo{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#1b1d22}
+.photo{position:relative;width:100%;max-width:380px;margin:12px auto;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--primary-soft);box-shadow:0 0 0 10px var(--primary-soft),0 0 0 11px rgba(122,31,53,.18),0 30px 60px rgba(122,31,53,.16)}
 .about h2{margin-bottom:18px}
 .about p:not(:global(.eyebrow)){max-width:640px;margin-bottom:24px;color:var(--muted);font-size:16px;line-height:1.85}
 
@@ -29,4 +29,4 @@
 .light span{transition:transform .25s ease}.light:hover span{transform:translate(3px,-2px)}
 
 
-@media(max-width:800px){.grid{grid-template-columns:1fr;gap:32px}.head{flex-direction:column;align-items:flex-start;gap:14px}.about{grid-template-columns:1fr}.photo{max-width:340px;aspect-ratio:1}}
+@media(max-width:800px){.grid{grid-template-columns:1fr;gap:32px}.head{flex-direction:column;align-items:flex-start;gap:14px}.about{grid-template-columns:1fr}.photo{max-width:280px;margin:12px 0 8px 12px}}

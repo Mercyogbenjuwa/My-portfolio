@@ -13,11 +13,26 @@
 .footerLinks{display:flex;gap:22px;flex-wrap:wrap}
 .footerLinks a{color:var(--text);font-weight:600;text-decoration:none}
 .footerLinks a:hover{color:var(--primary)}
+.menuButton,.menu{display:none}
 @media(max-width:800px){
-  .nav{min-height:auto;flex-wrap:wrap;padding:16px 0 0;gap:12px}
-  .contact{margin-left:auto;padding:10px 16px}
-  .links{order:3;width:100%;margin:0;gap:24px;overflow-x:auto;padding-bottom:12px}
-  .links .active::after{margin-top:3px}
+  .nav{min-height:68px;justify-content:space-between}
+  .links,.contact{display:none}
+  .menuButton{position:relative;display:block;width:44px;height:44px;border:1px solid var(--hairline);border-radius:12px;background:var(--white);cursor:pointer}
+  .menuButton span{position:absolute;left:12px;width:18px;height:2px;border-radius:2px;background:var(--text);transition:transform .3s ease,opacity .2s ease}
+  .menuButton span:nth-child(1){top:15px}.menuButton span:nth-child(2){top:21px}.menuButton span:nth-child(3){top:27px}
+  .isOpen span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  .isOpen span:nth-child(2){opacity:0}
+  .isOpen span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  .menu{display:grid;padding:8px 0 20px;border-bottom:1px solid var(--hairline)}
+  .menu[hidden]{display:none}
+  .menu a{display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-bottom:1px solid var(--hairline);color:var(--text);font-size:20px;font-weight:600;letter-spacing:-.02em;text-decoration:none}
+  .menu a:last-child{margin-top:16px;justify-content:center;gap:10px;border:0;border-radius:999px;background:var(--primary);color:var(--white);font-size:16px}
+  .menu a span{color:var(--primary)}.menu a:last-child span{color:inherit}
+  .menu .current{color:var(--primary)}
+}
+@media(max-width:800px) and (prefers-reduced-motion:no-preference){
+  .menuOpen a{animation:menu-in .35s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 45ms)}
+  @keyframes menu-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 }
 
 .brand img{flex:none;border-radius:10px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
