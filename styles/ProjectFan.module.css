@@ -1,0 +1,5 @@
+.stage{position:relative;width:min(1160px,calc(100% - 40px));height:clamp(330px,40vw,500px);margin:52px auto 0;border:1px solid var(--hairline);border-radius:28px;background:var(--surface);overflow:hidden}
+.card{--w:clamp(112px,15vw,196px);position:absolute;top:40px;left:50%;width:var(--w);margin-left:calc(var(--w) / -2);aspect-ratio:.62;border-radius:12px;overflow:hidden;box-shadow:-18px 12px 30px rgba(22,18,19,.2);transform-origin:50% 290%;transform:rotate(var(--angle))}
+@media(prefers-reduced-motion:no-preference){.card{animation:sway 9s ease-in-out infinite;will-change:transform}}
+@keyframes sway{0%,100%{transform:rotate(calc(var(--angle) * .6 - 7deg))}50%{transform:rotate(calc(var(--angle) * .6 + 7deg))}}
+@media(max-width:760px){.stage{height:300px;border-radius:20px}.card{--w:104px;top:30px}}

@@ -2,24 +2,30 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/Layout.module.css";
 
-const navigation = [["Home", "/"], ["Work", "/projects"], ["About", "/about"], ["Experience", "/resume"], ["Contact", "/contact"]];
+const navigation = [["Work", "/projects"], ["About", "/about"], ["Experience", "/resume"]];
+const footerLinks = [["Email", "mailto:ogbenjuwamercyonyoibo@gmail.com"], ["Phone", "tel:+2349027918134"], ["GitHub", "https://github.com/Mercyogbenjuwa"], ["LinkedIn", "https://www.linkedin.com/in/mercy-ogbenjuwa-178805227"]];
 
 export default function Layout({ children }) {
   const router = useRouter();
   return (
     <div className={styles.shell}>
       <header className={styles.header}>
-        <Link href="/"><a className={styles.brand} aria-label="Mercy Ogbenjuwa Ikya, home"><span className={styles.brandMark}>MI</span><span>Mercy Ogbenjuwa Ikya</span></a></Link>
-        <nav className={styles.nav} aria-label="Main navigation">
-          {navigation.map(([label, href]) => <Link href={href} key={href}><a className={router.pathname === href ? styles.active : ""}>{label}</a></Link>)}
-        </nav>
-        <a className={styles.availability} href="mailto:ogbenjuwamercyonyoibo@gmail.com"><span aria-hidden="true" /> Available for opportunities</a>
+        <div className={styles.bar}>
+          <nav className={styles.nav} aria-label="Main navigation">
+            <Link href="/"><a className={styles.brand}>Mercy Ogbenjuwa Ikya</a></Link>
+            <div className={styles.links}>
+              {navigation.map(([label, href]) => <Link href={href} key={href}><a className={router.pathname === href ? styles.active : ""}>{label}</a></Link>)}
+            </div>
+            <Link href="/contact"><a className={styles.contact}>Contact <span aria-hidden="true">↗</span></a></Link>
+          </nav>
+        </div>
       </header>
       <main>{children}</main>
       <footer className={styles.footer}>
-        <div><strong>Mercy Ogbenjuwa Ikya</strong><p>Founder · Product Manager · Senior Product Engineer</p></div>
-        <div className={styles.footerLinks}><a href="mailto:ogbenjuwamercyonyoibo@gmail.com">Email</a><a href="tel:+2349027918134">Phone</a><a href="https://github.com/Mercyogbenjuwa" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/mercy-ogbenjuwa-178805227" target="_blank" rel="noreferrer">LinkedIn</a></div>
-        <p>© {new Date().getFullYear()} Mercy Ogbenjuwa Ikya.</p>
+        <span>© {new Date().getFullYear()} Mercy Ogbenjuwa Ikya</span>
+        <div className={styles.footerLinks}>
+          {footerLinks.map(([label, href]) => <a key={label} href={href} {...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>{label}</a>)}
+        </div>
       </footer>
     </div>
   );

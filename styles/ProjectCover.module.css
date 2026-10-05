@@ -1,0 +1,15 @@
+.cover{width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#fff;text-align:left}
+.cover small{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.cover b{font-family:var(--font-display);font-size:clamp(24px,2.4vw,34px);font-weight:600;line-height:1.08;letter-spacing:-.035em}
+.fan{padding:16px}
+.fan small{font-size:10px}
+.fan b{font-size:clamp(15px,1.6vw,21px)}
+.wine{background:linear-gradient(160deg,#7a1f35,#3d0e1a)}
+.night{background:linear-gradient(160deg,#2b1c20,#130c0e)}
+.rose{background:linear-gradient(160deg,#a33a50,#6a1a2c)}
+.berry{background:linear-gradient(160deg,#c9a59d,#9a6a62)}
+.blush{background:linear-gradient(160deg,#f1e6e2,#d9c6bf);color:var(--text)}
+.plum{background:linear-gradient(160deg,#4a2730,#241216)}
+.clay{background:linear-gradient(160deg,#b4706a,#7c3f3b)}
+.deep{background:linear-gradient(160deg,#5e1628,#2a0a12)}
+@media(max-width:520px){.card{padding:14px}.card b{font-size:19px}}

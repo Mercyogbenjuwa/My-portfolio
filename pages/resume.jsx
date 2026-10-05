@@ -1,101 +1,32 @@
+import { education, experience } from "../lib/content";
 import styles from "../styles/ResumePage.module.css";
 
-const educationHistory = [
-  {
-    degree: "BSc. in Computer Science",
-    school: "Bingham University",
-  },
-];
-
-const professionalExperience = [
-  {
-    company: "Juwa Tech",
-    location: "Nigeria / Remote",
-    workType: "Founder",
-    duration: "SEP. 2026 - PRESENT",
-  },
-  {
-    company: "Nathan Claire Africa",
-    location: "London, United Kingdom",
-    workType: "Full-time",
-    role: "Product Manager",
-    duration: "JAN. 2026 - PRESENT",
-  },
-  {
-    company: "Nathan Claire Africa",
-    location: "London, United Kingdom",
-    workType: "Contract",
-    role: "Software Engineer",
-    duration: "APR. 2025 - DEC. 2025",
-  },
-  {
-    company: "Central Securities Clearing System",
-    location: "Lagos, Nigeria",
-    workType: "Full-time",
-    role: "Full Stack Product Engineer",
-    duration: "JAN. 2024 - DEC. 2025",
-  },
-  {
-    company: "Optimus Bank",
-    location: "Lagos, Nigeria",
-    workType: "Full-time",
-    role: "Software Engineer",
-    duration: "SEP. 2022 - DEC. 2023",
-  },
-  {
-    company: "Talosmart",
-    location: "Remote",
-    workType: "Full-time",
-    role: "Software Engineer",
-    duration: "SEP. 2021 - SEP. 2022",
-  },
-  {
-    company: "Heirs Life & Heirs General Insurance",
-    location: "Abuja, Nigeria",
-    workType: "Contract",
-    role: "Technical Support",
-    duration: "JAN. 2021 - AUG. 2021",
-  },
-];
-
-const ResumePage = () => {
+export default function ResumePage() {
   return (
-    <div className={styles.container}>
-      <div className={styles["education-section"]}>
-        <h3 className={styles.heading}>Education History</h3>
-
-        {educationHistory.map((education) => (
-          <div className={styles.item} key={education.degree}>
-            <h4 className={styles.resumeHead}>{education.degree}</h4>
-            <div>{education.school}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className={styles["work-section"]}>
-        <h3 className={styles.heading}>Professional Experience</h3>
-
-        {professionalExperience.map((experience) => (
-          <div
-            className={styles.item}
-            key={`${experience.company}-${experience.role}-${experience.duration}`}
-          >
-            <h4 className={styles.resumeHead}>{experience.company}</h4>
-            <div>{experience.location}</div>
-            <div>{experience.workType}</div>
-            {experience.role && <div>{experience.role}</div>}
-            <div>{experience.duration}</div>
-          </div>
-        ))}
-      </div>
+    <div className="page">
+      <header className="arrive">
+        <p className="eyebrow eyebrow-line">Experience</p>
+        <h1 className="page-title">Where I’ve worked.</h1>
+      </header>
+      <section className={styles.block}>
+        <div className="rows">
+          {experience.map((job, index) => (
+            <div className="row" key={`${job.company}-${job.duration}`}>
+              <span className="row-index">{String(index + 1).padStart(2, "0")}</span>
+              <div className="row-body"><h3>{job.company}</h3><p>{[job.role, job.workType, job.location].filter(Boolean).join(" · ")}</p></div>
+              <span className="row-meta">{job.duration}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className={styles.block}>
+        <p className={`eyebrow ${styles.label}`}>Education</p>
+        <div className="rows">
+          {education.map((item) => <div className="row" key={item.degree}><span className="row-index">01</span><div className="row-body"><h3>{item.degree}</h3><p>{item.school}</p></div></div>)}
+        </div>
+      </section>
     </div>
   );
-};
-
-export default ResumePage;
-
-export async function getStaticProps() {
-  return {
-    props: { title: "Resume" },
-  };
 }
+
+export async function getStaticProps() { return { props: { title: "Experience" } }; }

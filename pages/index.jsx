@@ -1,25 +1,75 @@
 import Image from "next/image";
 import Link from "next/link";
+import ProjectCard from "../components/ProjectCard";
+import ProjectFan from "../components/ProjectFan";
 import TypewriterRoles from "../components/TypewriterRoles";
+import { experience, services } from "../lib/content";
+import { getProjects } from "./api/projects";
 import styles from "../styles/HomePage.module.css";
 
-const capabilities = ["Product management", "Product strategy", "Roadmaps & documentation", "Full-stack engineering", "APIs & integrations", "Financial & enterprise platforms", "Cloud & observability"];
-
-export default function HomePage() {
+export default function HomePage({ projects }) {
   return <>
     <section className={styles.hero}>
-      <div className={styles.heroCopy}><p className="eyebrow"><TypewriterRoles /></p><h1>I build digital products <em>that work.</em></h1><p className={styles.intro}>I’m Mercy — Founder of Juwa Tech, a Product Manager, and a Senior Product Engineer delivering financial, enterprise, monitoring, and operational platforms.</p><div className={styles.actions}><Link href="/projects"><a className="button">Explore my work <span>↗</span></a></Link><Link href="/contact"><a className="button secondary">Let’s work together</a></Link></div></div>
-      <div className={styles.portrait}><div className={styles.imageWrap}><Image src="/profile.png" alt="Mercy Ogbenjuwa" layout="fill" objectFit="cover" priority /></div><div className={styles.note}><span>Building</span><strong>Founder, Juwa Tech</strong></div></div>
+      <div className="arrive">
+        <p className="eyebrow eyebrow-line"><TypewriterRoles /></p>
+        <h1>I build digital products <em>that work.</em></h1>
+        <p className={styles.lead}>Founder of Juwa Tech, Product Manager and Senior Product Engineer.</p>
+        <div className={styles.actions}>
+          <Link href="/contact"><a className="button">Let’s work together <span aria-hidden="true">↗</span></a></Link>
+          <a className="text-link" href="#work">View the work <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div className="arrive-late"><ProjectFan projects={projects} /></div>
     </section>
-    <section className={styles.marquee} aria-label="Areas of expertise"><div className={styles.marqueeTrack}>{[...capabilities, ...capabilities].map((item,index)=><span key={`${item}-${index}`} aria-hidden={index >= capabilities.length}>{item}<b>✦</b></span>)}</div></section>
-    <section className={styles.snapshot}>
-      <div><p className="eyebrow">A practical builder</p><h2>Strategy in one hand.<br/>Execution in the other.</h2></div>
-      <div className={styles.stats}><div><strong>PM</strong><span>Product strategy and delivery</span></div><div><strong>ENG</strong><span>Architecture and engineering</span></div><div><strong>360°</strong><span>Product-to-production ownership</span></div></div>
-      <p>I lead discovery, research, roadmaps, requirements, product documentation, stakeholder alignment and delivery—then bring the engineering depth to understand architecture, APIs, data, quality, cloud and production.</p>
+
+    <section className={styles.work} id="work">
+      <div className={styles.head}>
+        <div><p className="eyebrow">Selected work</p><h2 className="section-title">Projects I’ve worked on.</h2></div>
+        <Link href="/projects"><a className="text-link">Details and stacks <span aria-hidden="true">↗</span></a></Link>
+      </div>
+      <div className={styles.grid}>
+        {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
+      </div>
     </section>
-    <section className={styles.featured}><div className={styles.sectionHead}><div><p className="eyebrow">Selected work</p><h2>Platforms built for real operations.</h2></div><Link href="/projects"><a>View all projects →</a></Link></div>
-      <div className={styles.projectGrid}><Link href="/projects"><a className={styles.project}><span>01 · Financial platform</span><h3>CSCS Custodian Portal</h3><p>A secure operational portal for portfolios, accounts, trade activity, and cross-exchange execution.</p><b>View case study ↗</b></a></Link><Link href="/projects"><a className={`${styles.project} ${styles.alt}`}><span>02 · Banking products</span><h3>Optimus Bank</h3><p>Digital banking products spanning lending, transfers, fraud controls, and internal workflows.</p><b>View case study ↗</b></a></Link><Link href="/projects"><a className={`${styles.project} ${styles.juwa}`}><span>03 · Technology company</span><h3>Juwa Tech</h3><p>Technology services and practical business products, including the upcoming Juwa Hub platform.</p><b>View project ↗</b></a></Link></div>
+
+    <section className={styles.aboutBand}>
+      <div className={styles.about}>
+        <div className={styles.photo}><Image src="/profile.png" alt="Mercy Ogbenjuwa Ikya" layout="fill" objectFit="cover" /></div>
+        <div>
+          <p className="eyebrow">About</p>
+          <h2 className="section-title">A product manager who can build the thing.</h2>
+          <p>I align stakeholders, shape the roadmap, understand the architecture and work with engineering teams to move dependable software from idea to production.</p>
+          <Link href="/about"><a className="text-link">More about me <span aria-hidden="true">→</span></a></Link>
+        </div>
+      </div>
+    </section>
+
+    <section className={styles.section}>
+      <div className={styles.centerHead}><p className="eyebrow">What I offer</p><h2 className="section-title">Ways to work together.</h2></div>
+      <div className="rows">
+        {services.slice(0, 4).map((service, index) => <div className="row" key={service.title}><span className="row-index">0{index + 1}</span><div className="row-body"><h3>{service.title}</h3><p>{service.text}</p></div></div>)}
+      </div>
+    </section>
+
+    <section className={`${styles.section} ${styles.flush}`}>
+      <div className={styles.centerHead}><p className="eyebrow">Experience</p><h2 className="section-title">Where I’ve worked.</h2></div>
+      <div className="rows">
+        {experience.slice(0, 4).map((job, index) => <div className="row" key={`${job.company}-${job.duration}`}><span className="row-index">0{index + 1}</span><div className="row-body"><h3>{job.company}</h3><p>{job.role || job.workType}</p></div><span className="row-meta">{job.duration}</span></div>)}
+      </div>
+      <div className={styles.more}><Link href="/resume"><a className="text-link">Full experience <span aria-hidden="true">→</span></a></Link></div>
+    </section>
+
+    <section className={styles.contact}>
+      <p className="eyebrow">Contact</p>
+      <h2>Have a project in mind? Let’s build something useful.</h2>
+      <div className={styles.actions}>
+        <Link href="/contact"><a className={styles.light}>Start a conversation <span aria-hidden="true">↗</span></a></Link>
+        <a className="text-link" href="mailto:ogbenjuwamercyonyoibo@gmail.com">Email me <span aria-hidden="true">→</span></a>
+      </div>
     </section>
   </>;
 }
-export async function getStaticProps(){return{props:{title:"Mercy Ogbenjuwa Ikya"}}}
+
+export async function getStaticProps() {
+  return { props: { title: "Mercy Ogbenjuwa Ikya", projects: getProjects() } };
+}
