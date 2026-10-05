@@ -1,10 +1,14 @@
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import Head from "../components/Head";
+import useReveal from "../lib/useReveal";
 import "../styles/globals.css";
 import "../styles/themes.css";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+  useReveal(router.asPath);
 
   useEffect(() => {
     if (localStorage.getItem("theme")) {

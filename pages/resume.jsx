@@ -7,11 +7,12 @@ export default function ResumePage() {
       <header className="arrive">
         <p className="eyebrow eyebrow-line">Experience</p>
         <h1 className="page-title">Where I’ve worked.</h1>
+        <p className="lead">From insurance and banking to capital markets, and now my own company.</p>
       </header>
       <section className={styles.block}>
         <div className="rows">
           {experience.map((job, index) => (
-            <div className="row" key={`${job.company}-${job.duration}`}>
+            <div className="row" key={`${job.company}-${job.duration}`} data-reveal style={{ "--d": `${index * 0.05}s` }}>
               <span className="row-index">{String(index + 1).padStart(2, "0")}</span>
               <div className="row-body"><h3>{job.company}</h3><p>{[job.role, job.workType, job.location].filter(Boolean).join(" · ")}</p></div>
               <span className="row-meta">{job.duration}</span>
