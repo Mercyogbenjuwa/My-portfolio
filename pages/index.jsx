@@ -8,8 +8,6 @@ import { experience, services } from "../lib/content";
 import { getProjects } from "./api/projects";
 import styles from "../styles/HomePage.module.css";
 
-const companies = ["Juwa Tech", "Nathan Claire Africa", "Central Securities Clearing System", "Optimus Bank", "Talosmart", "Heirs Insurance"];
-
 function Rise({ text, offset = 0 }) {
   return text.split(" ").map((word, i) => <Fragment key={`${word}-${i}`}><span style={{ "--i": i + offset }}>{word}</span>{" "}</Fragment>);
 }
@@ -18,8 +16,8 @@ export default function HomePage({ projects }) {
   return <>
     <section className={styles.hero}>
       <p className="eyebrow eyebrow-line arrive"><TypewriterRoles /></p>
-      <h1 className="rise"><Rise text="I build digital products" /><em><Rise text="that work." offset={4} /></em></h1>
-      <p className={`${styles.lead} arrive-late`}>I’m Mercy. I plan products and build them, from the first idea to a system people rely on every day.</p>
+      <h1 className="rise"><Rise text="I turn ideas into" /><em><Rise text="products people rely on." offset={4} /></em></h1>
+      <p className={`${styles.lead} arrive-late`}>Product manager and senior engineer. I’ve shipped banking, capital markets and ERP systems, and I founded Juwa Tech, the company behind Juwa Hub.</p>
       <div className={`${styles.actions} arrive-late`}>
         <Link href="/contact"><a className="button">Let’s work together <span aria-hidden="true">↗</span></a></Link>
         <a className="text-link" href="#work">See my work <span aria-hidden="true">→</span></a>
@@ -27,19 +25,13 @@ export default function HomePage({ projects }) {
       <ProjectFan projects={projects} />
     </section>
 
-    <section className={styles.marquee} aria-label="Where I’ve worked">
-      <div className={styles.track}>
-        {[...companies, ...companies].map((name, i) => <span key={`${name}-${i}`} aria-hidden={i >= companies.length}>{name}<b aria-hidden="true">✦</b></span>)}
-      </div>
-    </section>
-
     <section className={styles.work} id="work">
       <div className={styles.head} data-reveal>
         <div><p className="eyebrow">Selected work</p><h2 className="section-title">Things I’ve helped build.</h2></div>
-        <Link href="/projects"><a className="text-link">Stacks and details <span aria-hidden="true">→</span></a></Link>
+        <Link href="/projects"><a className="text-link">See all {projects.length} projects <span aria-hidden="true">→</span></a></Link>
       </div>
       <div className={styles.grid}>
-        {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
+        {projects.slice(0, 3).map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
       </div>
     </section>
 
