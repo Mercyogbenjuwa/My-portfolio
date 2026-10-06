@@ -30,4 +30,4 @@ export default function AboutPage() {
   </>;
 }
 
-export async function getStaticProps() { return { props: { title: "About" } }; }
+export async function getStaticProps() { return { props: { title: "About", description: "About Mercy Ogbenjuwa Ikya: founder of Juwa Tech, product manager and senior engineer turning messy requirements into software people trust." } }; }

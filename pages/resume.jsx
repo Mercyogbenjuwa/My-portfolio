@@ -30,4 +30,4 @@ export default function ResumePage() {
   );
 }
 
-export async function getStaticProps() { return { props: { title: "Experience" } }; }
+export async function getStaticProps() { return { props: { title: "Experience", description: "Work experience of Mercy Ogbenjuwa Ikya across banking, capital markets, ERP, observability and business platforms." } }; }

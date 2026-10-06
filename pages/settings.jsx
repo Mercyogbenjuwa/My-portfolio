@@ -62,7 +62,7 @@ const SettingsPage = () => {
 
 export async function getStaticProps() {
   return {
-    props: { title: 'Settings' },
+    props: { title: 'Settings', noindex: true },
   };
 }
 
