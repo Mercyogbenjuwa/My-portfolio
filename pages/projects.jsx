@@ -29,5 +29,5 @@ export default function ProjectsPage({ projects }) {
 }
 
 export async function getStaticProps() {
-  return { props: { title: "Work", projects: getProjects() } };
+  return { props: { title: "Work", description: "Selected work by Mercy Ogbenjuwa Ikya, including Juwa Hub, the CSCS custodian portal, Optimus Bank products and Converge ERP.", projects: getProjects() } };
 }

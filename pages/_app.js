@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Layout>
-      <Head title={pageProps.title === "Mercy Ogbenjuwa Ikya" ? pageProps.title : pageProps.title || "Mercy Ogbenjuwa Ikya"} />
+      <Head title={pageProps.title || "Mercy Ogbenjuwa Ikya"} description={pageProps.description} noindex={pageProps.noindex} />
       <Component {...pageProps} />
     </Layout>
   );

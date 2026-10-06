@@ -83,4 +83,4 @@ export default function ContactPage() {
   );
 }
 
-export async function getStaticProps() { return { props: { title: "Contact" } }; }
+export async function getStaticProps() { return { props: { title: "Contact", description: "Contact Mercy Ogbenjuwa Ikya about product strategy, web and mobile apps, backend systems, ERP and cloud work." } }; }
