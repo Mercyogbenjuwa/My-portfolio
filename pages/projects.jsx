@@ -11,7 +11,7 @@ export default function ProjectsPage({ projects }) {
         <header className="arrive">
           <p className="eyebrow eyebrow-line">Selected work</p>
           <h1 className="page-title">Work I’m proud of.</h1>
-          <p className="lead">Banking, capital markets, ERP, monitoring and small-business products, from plan to production.</p>
+          <p className="lead">Banking, capital markets, ERP, monitoring and business products, from plan to production.</p>
         </header>
         <div className={styles.grid}>
           {projects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} detailed />)}
